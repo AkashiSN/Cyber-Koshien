@@ -1,5 +1,7 @@
 # サイバー甲子園(2016)-WriteUp-
 
+![Cyber-Koshien.png](Cyber-Koshien.png)
+
 `BiPhone`というチームで[@snow](https://twitter.com/Snow_Poijio)と一緒に出場した
 
 ![img](img.png)
