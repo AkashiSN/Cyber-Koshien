@@ -21,17 +21,14 @@
 [solve.py](solve.py)
 
 ```python
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-f = open("x2.txt","rb")
-
-print "".join(map(lambda x:chr(ord(x) / 2),list(f.read())))
-
-f.close()
+d = open("x2.txt","rb").read()
+print("".join([chr(c//2) for c in d]))
 ```
 
 ```plane
-$ ./solve.py
+$ python solve.py
 I have a pen. I have an apple. SECCON{lshift_or_rshift}!
 ```
 

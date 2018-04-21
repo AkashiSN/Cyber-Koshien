@@ -1,6 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+from LSBSteg import LSBSteg
+import cv2,binascii
 
-f = open("output.bin","rb")
-Bin = f.read()
-Hex = hex(int(Bin,2))
-print(Hex)
+steg = LSBSteg(cv2.imread("online.png"))
+Bytes = steg.decode_binary()
+Int = int(Bytes,2)
+flag = binascii.unhexlify(format(Int,"x")).decode()
+print(flag)
