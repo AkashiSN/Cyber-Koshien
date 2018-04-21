@@ -17,10 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
                 
             
@@ -577,94 +573,33 @@ openssl cipher &#x3067;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x3069;&#x308C;&
 </code></pre>
 <p><a href="opensslcipher.zip">opensslcipher.zip</a></p>
 <h2 id="answer">Answer</h2>
-<p>openssl&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x6697;&#x53F7;&#x5316;&#x3057;&#x305F;&#x305D;&#x3046;&#x306A;&#x306E;&#x3067;&#x3001;&#x3069;&#x3093;&#x306A;&#x6697;&#x53F7;&#x5316;&#x65B9;&#x5F0F;&#x304C;&#x4F7F;&#x3048;&#x308B;&#x306E;&#x304B;&#x8ABF;&#x3079;&#x3066;&#x307F;&#x308B;</p>
-<p><code>$ openssl list-cipher-commands &gt; crypto.txt</code></p>
-<p><a href="crypto.txt">crypto.txt</a></p>
-<pre><code class="lang-plane">aes-128-cbc
-aes-128-ecb
-aes-192-cbc
-aes-192-ecb
-aes-256-cbc
-aes-256-ecb
-base64
-bf
-bf-cbc
-bf-cfb
-bf-ecb
-bf-ofb
-camellia-128-cbc
-camellia-128-ecb
-camellia-192-cbc
-camellia-192-ecb
-camellia-256-cbc
-camellia-256-ecb
-cast
-cast-cbc
-cast5-cbc
-cast5-cfb
-cast5-ecb
-cast5-ofb
-des
-des-cbc
-des-cfb
-des-ecb
-des-ede
-des-ede-cbc
-des-ede-cfb
-des-ede-ofb
-des-ede3
-des-ede3-cbc
-des-ede3-cfb
-des-ede3-ofb
-des-ofb
-des3
-desx
-rc2
-rc2-40-cbc
-rc2-64-cbc
-rc2-cbc
-rc2-cfb
-rc2-ecb
-rc2-ofb
-rc4
-rc4-40
-seed
-seed-cbc
-seed-cfb
-seed-ecb
-seed-ofb
-</code></pre>
-<p><a href="http://qiita.com/ikuwow/items/1cdb057352c06fd3d727" target="_blank">http://qiita.com/ikuwow/items/1cdb057352c06fd3d727</a></p>
+<p>openssl&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x6697;&#x53F7;&#x5316;&#x3057;&#x305F;&#x305D;&#x3046;&#x306A;&#x306E;&#x3067;&#x3001;&#x3069;&#x3093;&#x306A;&#x6697;&#x53F7;&#x5316;&#x65B9;&#x5F0F;&#x304C;&#x4F7F;&#x3048;&#x308B;&#x306E;&#x304B;&#x8ABF;&#x3079;&#x308B;</p>
+<p><code>$ openssl list-cipher-commands</code></p>
+<p><a href="https://qiita.com/Yarimizu14/items/49690c141b62507e00d9#%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89%E3%81%AE%E6%8C%87%E5%AE%9A%E6%96%B9%E6%B3%95" target="_blank">https://qiita.com/Yarimizu14/items/49690c141b62507e00d9#%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89%E3%81%AE%E6%8C%87%E5%AE%9A%E6%96%B9%E6%B3%95</a></p>
 <blockquote>
-<h4 id="&#x5FA9;&#x53F7;">&#x5FA9;&#x53F7;</h4>
-<h5 id="&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6A19;&#x6E96;&#x5165;&#x529B;&#x304B;&#x3089;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x5834;&#x5408;">&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6A19;&#x6E96;&#x5165;&#x529B;&#x304B;&#x3089;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x5834;&#x5408;</h5>
-<p><code>$ openssl aes-256-cbc -d -in encrypted.txt -out decrypted.txt</code></p>
-<p><code>enter aes-256-cbc decryption password: # &#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x5165;&#x529B;</code></p>
-<h5 id="&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304B;&#x3089;&#x8AAD;&#x307F;&#x8FBC;&#x3080;&#x5834;&#x5408;">&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304B;&#x3089;&#x8AAD;&#x307F;&#x8FBC;&#x3080;&#x5834;&#x5408;</h5>
-<p><code>$ openssl aes-256-cbc -d -in encrypted.txt -out decrypted.txt -pass file:./password.txt</code></p>
+<p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x304B;&#x3089;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x5834;&#x5408;</p>
+<p><code>$ openssl aes-256-cbc -e -in in_sample.txt -out out_sample.txt -pass pass:hoge</code></p>
 </blockquote>
 <p>&#x306A;&#x308B;&#x307B;&#x3069;&#x30FB;&#x30FB;&#x30FB;</p>
 <p>&#x30D6;&#x30EB;&#x30FC;&#x30C8;&#x30D5;&#x30A9;&#x30FC;&#x30B9;&#x3059;&#x308C;&#x3070;&#x3088;&#x3055;&#x305D;&#x3046;</p>
 <p><a href="solve.py">solve.py</a></p>
-<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
-<span class="hljs-keyword">import</span> commands,re
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python3</span>
+<span class="hljs-keyword">import</span> subprocess
 
-enc = open(<span class="hljs-string">&quot;crypto.txt&quot;</span>,<span class="hljs-string">&quot;r&quot;</span>)
+Enc = <span class="hljs-string">&quot;aes-128-cbc aes-128-ecb aes-192-cbc aes-192-ecb aes-256-cbc aes-256-ecb base64 bf bf-cbc bf-cfb bf-ecb bf-ofb camellia-128-cbc camellia-128-ecb camellia-192-cbc camellia-192-ecb camellia-256-cbc camellia-256-ecb cast cast-cbc cast5-cbc cast5-cfb cast5-ecb cast5-ofb des des-cbc des-cfb des-ecb des-ede des-ede-cbc des-ede-cfb des-ede-ofb des-ede3 des-ede3-cbc des-ede3-cfb des-ede3-ofb des-ofb des3 desx rc2 rc2-40-cbc rc2-64-cbc rc2-cbc rc2-cfb rc2-ecb rc2-ofb rc4 rc4-40 seed seed-cbc seed-cfb seed-ecb seed-ofb&quot;</span>.split(<span class="hljs-string">&quot; &quot;</span>)
 
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> enc:
-    cmd = <span class="hljs-string">&quot;openssl {} -d -in flag.encrypted -pass file:./password.txt&quot;</span>.format(i[:<span class="hljs-number">-1</span>])
-    out = commands.getoutput(cmd).split(<span class="hljs-string">&quot;\n&quot;</span>)[<span class="hljs-number">0</span>]
-    <span class="hljs-keyword">if</span> out != <span class="hljs-string">&quot;bad decrypt&quot;</span>:
-        <span class="hljs-keyword">if</span> re.match(<span class="hljs-string">&quot;SECCON&quot;</span>,out):
-            print(out.split(<span class="hljs-string">&quot;\n&quot;</span>)[<span class="hljs-number">0</span>])
-            print(<span class="hljs-string">&quot;Decrypted!&quot;</span>)
+<span class="hljs-keyword">for</span> enc <span class="hljs-keyword">in</span> Enc:
+    cmd = [<span class="hljs-string">&quot;openssl&quot;</span>, enc, <span class="hljs-string">&quot;-d&quot;</span>, <span class="hljs-string">&quot;-in&quot;</span>, <span class="hljs-string">&quot;flag.encrypted&quot;</span>, <span class="hljs-string">&quot;-k&quot;</span>, <span class="hljs-string">&quot;53CC0NZOl6&quot;</span>]
+    out = subprocess.run(cmd,stderr=subprocess.PIPE,stdout=subprocess.PIPE)
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;SECCON&quot;</span> <span class="hljs-keyword">in</span> out.stdout.decode(<span class="hljs-string">&apos;utf8&apos;</span>):
+            print(out.stdout.decode(<span class="hljs-string">&apos;utf8&apos;</span>))
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">pass</span>
 </code></pre>
 <p>&#x5B9F;&#x884C;&#x3057;&#x305F;&#x3089;&#x30D5;&#x30E9;&#x30B0;&#x304C;&#x51FA;&#x3066;&#x304F;&#x308B;</p>
-<pre><code class="lang-plane">$ ./solve.py
+<pre><code class="lang-plane">$ python solve.py
 SECCON{R U 4 0P3N55L M457ER?}
-Decrypted!
-SECCON{RDN&#xFFFD;&#xFFFD;Q&#x25BC;|&#xFFFD;&#xFFFD;&#x25B2;&#xFFFD;&#xFFFD;2&#xFFFD;n&#xFFFD;&#xFFFD; j&#xFFFD;wY
-Decrypted!
 </code></pre>
 <p><code>SECCON{R U 4 0P3N55L M457ER?}</code></p>
 
@@ -710,7 +645,7 @@ Decrypted!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"decode the flag","level":"1.1.3.3","depth":3,"next":{"title":"onlineyosen","level":"1.1.3.4","depth":3,"path":"Crypto/onlineyosen/README.md","ref":"Crypto/onlineyosen/README.md","articles":[]},"previous":{"title":"very easy","level":"1.1.3.2","depth":3,"path":"Crypto/very_easy/README.md","ref":"Crypto/very_easy/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex","collapsible-chapters"],"pluginsConfig":{"katex":{},"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Crypto/decode_the_flag/README.md","mtime":"2018-04-21T07:08:49.468Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-21T07:13:15.456Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"decode the flag","level":"1.1.3.3","depth":3,"next":{"title":"onlineyosen","level":"1.1.3.4","depth":3,"path":"Crypto/onlineyosen/README.md","ref":"Crypto/onlineyosen/README.md","articles":[]},"previous":{"title":"very easy","level":"1.1.3.2","depth":3,"path":"Crypto/very_easy/README.md","ref":"Crypto/very_easy/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Crypto/decode_the_flag/README.md","mtime":"2018-04-21T09:06:11.480Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-21T09:51:43.147Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

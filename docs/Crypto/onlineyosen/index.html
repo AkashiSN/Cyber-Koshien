@@ -17,10 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
                 
             
@@ -605,63 +601,22 @@ IEND
 <p>&#x3050;&#x3050;&#x3063;&#x3066;&#x307F;&#x305F;</p>
 <p><a href="https://www.google.co.jp/search?q=lsb+png" target="_blank">https://www.google.co.jp/search?q=lsb+png</a></p>
 <p><a href="https://github.com/RobinDavid/LSB-Steganography" target="_blank">LSB-Steganography</a></p>
-<p>&#x3044;&#x3044;&#x611F;&#x3058;&#xFF01;</p>
-<p><a href="https://raw.githubusercontent.com/RobinDavid/LSB-Steganography/master/LSBSteg.py" target="_blank">LSBSteg.py</a></p>
-<pre><code class="lang-plane">$ ./LSBSteg.py -h
-Traceback (most recent call last):
-  File &quot;./LSBSteg.py&quot;, line 44, in &lt;module&gt;
-    import cv2.cv as cv
-ImportError: No module named cv2.cv
-</code></pre>
-<p>&#x3046;&#xFF5E;&#x3093;</p>
-<p><code>opencv</code>&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x306A;&#x3044;&#x3068;&#x3044;&#x3051;&#x306A;&#x3044;&#x306E;&#x304B;&#x306A;&#xFF1F;</p>
-<pre><code class="lang-plane">$ sudo apt-get install libopencv-dev
-$ sudo apt-get install python-numpy
-$ sudo apt-get install python-opencv
-$ sudo ln /dev/null /dev/raw1394
-</code></pre>
-<pre><code class="lang-plane">$ ./LSBSteg.py -h
-usage: LSBSteg.py [-h] [-image IMAGE] [-binary BINARY] [-steg-out STEG_OUT]
-                  [-steg-image STEG_IMAGE] [-out OUT]
+<p><a href="https://gist.github.com/AkashiSN/62a385e4839e49105a30bbc7eba5f9f6#file-ctf_tools-sh-L395" target="_blank">LSB-Steganography - install script</a></p>
+<p>&#x3044;&#x3044;&#x611F;&#x3058;&#xFF01;
+<a href="solve.py">solve.py</a></p>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python3</span>
+<span class="hljs-keyword">from</span> LSBSteg <span class="hljs-keyword">import</span> LSBSteg
+<span class="hljs-keyword">import</span> cv2,binascii
 
-This python program applies LSB Steganography to an image and some type of
-input
-
-optional arguments:
-  -h, --help            show this help message and exit
-
-Hide binary with steg:
-  -image IMAGE          Provide the original image
-  -binary BINARY        The binary file to be obfuscated in the image
-  -steg-out STEG_OUT    The resulting steganographic image
-
-Reveal binary:
-  -steg-image STEG_IMAGE
-                        The steganographic image
-  -out OUT              The original binary
+steg = LSBSteg(cv2.imread(<span class="hljs-string">&quot;online.png&quot;</span>))
+Bytes = steg.decode_binary()
+Int = int(Bytes,<span class="hljs-number">2</span>)
+flag = binascii.unhexlify(format(Int,<span class="hljs-string">&quot;x&quot;</span>)).decode()
+print(flag)
 </code></pre>
-<p>&#x3067;&#x304D;&#x305F;&#xFF01;</p>
-<p>&#x5B9F;&#x884C;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
-<pre><code class="lang-plane">$ ./LSBSteg.py -steg-image online.png -out output.bin
+<pre><code class="lang-plane">$ python solve.py
+SECCON{HidesecretIm4g3}
 </code></pre>
-<p><a href="output.bin">output.bin</a></p>
-<pre><code class="lang-plane">0b101001101000101010000110100001101001111010011100111101101001000011010010110010001100101011100110110010101100011011100100110010101110100010010010110110100110100011001110011001101111101
-</code></pre>
-<p>2&#x9032;&#x6570;&#x304C;&#x51FA;&#x3066;&#x304F;&#x308B;&#x306E;&#x3067;&#x3053;&#x308C;&#x3092;ASCII&#x306B;&#x5909;&#x63DB;&#x3057;&#x3066;&#x3084;&#x308B;&#x3068;</p>
-<p><a href="solve.py">solve.py</a></p>
-<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
-
-f = open(<span class="hljs-string">&quot;output.bin&quot;</span>,<span class="hljs-string">&quot;rb&quot;</span>)
-Bin = f.read()
-Hex = hex(int(Bin,<span class="hljs-number">2</span>))
-print(Hex)
-</code></pre>
-<pre><code class="lang-plane">$ ./solve.py
-0x534543434f4e7b48696465736563726574496d3467337dL
-</code></pre>
-<p>&#x6587;&#x5B57;&#x307E;&#x3067;&#x5909;&#x63DB;&#x3057;&#x305F;&#x304B;&#x3063;&#x305F;&#x3051;&#x3069;&#x3001;16&#x9032;&#x6570;&#x304B;&#x3089;&#x3069;&#x3046;&#x3084;&#x3063;&#x3066;ASCII&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;&#x3093;&#x3060;&#xFF1F;</p>
-<p><a href="http://singoro.net/16henkan/" target="_blank">http://singoro.net/16henkan/</a></p>
-<p>&#x30AA;&#x30F3;&#x30E9;&#x30A4;&#x30F3;&#x30C4;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x3063;&#x305F;</p>
 <p><code>SECCON{HidesecretIm4g3}</code></p>
 
                                 
@@ -702,7 +657,7 @@ print(Hex)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"onlineyosen","level":"1.1.3.4","depth":3,"next":{"title":"Network","level":"1.1.4","depth":2,"ref":"","articles":[{"title":"gettheflag","level":"1.1.4.1","depth":3,"path":"Network/gettheflag/README.md","ref":"Network/gettheflag/README.md","articles":[]},{"title":"sample","level":"1.1.4.2","depth":3,"path":"Network/sample/README.md","ref":"Network/sample/README.md","articles":[]},{"title":"get the flag","level":"1.1.4.3","depth":3,"path":"Network/get_the_flag/README.md","ref":"Network/get_the_flag/README.md","articles":[]}]},"previous":{"title":"decode the flag","level":"1.1.3.3","depth":3,"path":"Crypto/decode_the_flag/README.md","ref":"Crypto/decode_the_flag/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex","collapsible-chapters"],"pluginsConfig":{"katex":{},"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Crypto/onlineyosen/README.md","mtime":"2018-04-21T07:09:31.756Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-21T07:13:15.456Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"onlineyosen","level":"1.1.3.4","depth":3,"next":{"title":"Network","level":"1.1.4","depth":2,"ref":"","articles":[{"title":"gettheflag","level":"1.1.4.1","depth":3,"path":"Network/gettheflag/README.md","ref":"Network/gettheflag/README.md","articles":[]},{"title":"sample","level":"1.1.4.2","depth":3,"path":"Network/sample/README.md","ref":"Network/sample/README.md","articles":[]},{"title":"get the flag","level":"1.1.4.3","depth":3,"path":"Network/get_the_flag/README.md","ref":"Network/get_the_flag/README.md","articles":[]}]},"previous":{"title":"decode the flag","level":"1.1.3.3","depth":3,"path":"Crypto/decode_the_flag/README.md","ref":"Crypto/decode_the_flag/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Crypto/onlineyosen/README.md","mtime":"2018-04-21T08:25:51.136Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-21T09:51:43.147Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

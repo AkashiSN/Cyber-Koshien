@@ -17,10 +17,6 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
                 
             
@@ -578,15 +574,12 @@
 <p>&#x304A;&#x305D;&#x3089;&#x304F;ASCII&#x30B3;&#x30FC;&#x30C9;&#x3092;&#xFF12;&#x500D;&#x306B;&#x3057;&#x305F;&#x3093;&#x3060;&#x306A;&#xFF5E;</p>
 <p>&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;</p>
 <p><a href="solve.py">solve.py</a></p>
-<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python3</span>
 
-f = open(<span class="hljs-string">&quot;x2.txt&quot;</span>,<span class="hljs-string">&quot;rb&quot;</span>)
-
-<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&quot;</span>.join(map(<span class="hljs-keyword">lambda</span> x:chr(ord(x) / <span class="hljs-number">2</span>),list(f.read())))
-
-f.close()
+d = open(<span class="hljs-string">&quot;x2.txt&quot;</span>,<span class="hljs-string">&quot;rb&quot;</span>).read()
+print(<span class="hljs-string">&quot;&quot;</span>.join([chr(c//<span class="hljs-number">2</span>) <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> d]))
 </code></pre>
-<pre><code class="lang-plane">$ ./solve.py
+<pre><code class="lang-plane">$ python solve.py
 I have a pen. I have an apple. SECCON{lshift_or_rshift}!
 </code></pre>
 <p>&#x6D41;&#x77F3;&#x306B;&#x8349;</p>
@@ -634,7 +627,7 @@ I have a pen. I have an apple. SECCON{lshift_or_rshift}!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"x2.txt","level":"1.1.5.2","depth":3,"next":{"title":"decode the trapezoid QR code","level":"1.1.5.3","depth":3,"path":"Programming/decode_the_trapezoid_QR_code/README.md","ref":"Programming/decode_the_trapezoid_QR_code/README.md","articles":[]},"previous":{"title":"megrep","level":"1.1.5.1","depth":3,"path":"Programming/megrep/README.md","ref":"Programming/megrep/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex","collapsible-chapters"],"pluginsConfig":{"katex":{},"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Programming/x2.txt/README.md","mtime":"2018-04-19T01:00:14.312Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-21T07:13:15.456Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"x2.txt","level":"1.1.5.2","depth":3,"next":{"title":"decode the trapezoid QR code","level":"1.1.5.3","depth":3,"path":"Programming/decode_the_trapezoid_QR_code/README.md","ref":"Programming/decode_the_trapezoid_QR_code/README.md","articles":[]},"previous":{"title":"megrep","level":"1.1.5.1","depth":3,"path":"Programming/megrep/README.md","ref":"Programming/megrep/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["collapsible-chapters"],"pluginsConfig":{"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Programming/x2.txt/README.md","mtime":"2018-04-21T09:47:09.960Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-21T09:51:43.147Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
