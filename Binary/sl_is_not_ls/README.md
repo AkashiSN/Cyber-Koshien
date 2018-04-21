@@ -46,19 +46,16 @@ bash: ./sl: そのようなファイルやディレクトリはありません
 はい、32ビットのライブラリを入れよう！
 
 ```plane
-# sudo apt-get install lib32z1
-# ./sl
+$ sudo apt-get install lib32z1
+$ ./sl
 Error opening terminal: xterm-256color.
-# TERM='xterm-color' ./sl
+$ TERM='xterm-color' ./sl
 ```
 
 これで実行できた
 
-`strings`コマンド
-
-[strings.txt](strings.txt)
-
 ```plane
+$ strings sl
 Try `./sl [-h] [OPTIONS]' for more information.
                 OPTIONS: -[%s%c]
 ____________________
